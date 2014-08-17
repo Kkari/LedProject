@@ -44,7 +44,7 @@ void init_ports();
 *				namely two shift registers, that drive the led panel
 *
 *	@x: x position
-*	@y:	y position
+*	@y: y position
 */
 void putpx(POS x,POS y);
 

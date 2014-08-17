@@ -39,26 +39,27 @@ void print_frame(char (*text[TXT_LEN])[CR_H][CR_W], char frame_start, char frame
         do
         {
             /* if it is the end of the text wind it up, else just get the next px */
-            if (j == TXT_BIT)
-                j = 0;
-            else
-                j++;
+		if (j == TXT_BIT)
+			j = 0;
+		else
+                	j++;
 
-            curr_ch = j / CR_W; /* get the current character */
-            curr_px = j % CR_W; /* get the position in that character */
+            	curr_ch = j / CR_W; /* get the current character */
+      		curr_px = j % CR_W; /* get the position in that character */
 
-            if((*text[curr_ch])[i][curr_px] == 1) {
-                putpx(i,k);
-            }
+		if((*text[curr_ch])[i][curr_px] == 1) {
+			putpx(i,k);
+            	}
 
-			if(text[curr_ch] == &PAD)
-			{
-				_delay_ms(1);
-			}
+		if(text[curr_ch] == &PAD) {
+			_delay_ms(1);
+		}
 
-            k++;
-			if (k == LED_LEN)
-				break;
+            	k++;
+	
+		if (k == LED_LEN)
+			break;
+
         } while (j != frame_end);
     }
 }
